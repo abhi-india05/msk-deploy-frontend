@@ -2,7 +2,6 @@ import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
-import NotificationDrawer from './components/NotificationDrawer';
 import PrivateRoute from './components/PrivateRoute';
 import ClientProjects from './pages/ClientProjects';
 import Clients from './pages/Clients';
@@ -18,7 +17,6 @@ function App() {
   return (
       <>
       <ToastContainer/>
-      <NotificationDrawer />
       <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Landing />} />

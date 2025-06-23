@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion'
-import { FiBell, FiMoon, FiSun, FiUser } from 'react-icons/fi'
+import { FiMoon, FiSun, FiUser } from 'react-icons/fi'
 import { NavLink, useParams } from 'react-router-dom'
-import { useNotification } from '../contexts/NotificationContext'
 import { useTheme } from '../contexts/ThemeContext'
 
 function Navbar() {
   const { darkMode, toggleDarkMode } = useTheme()
   const { user_id } = useParams();
-  const { drawerOpen, toggleDrawer, notifications } = useNotification();
 
   const activeLinkStyle = darkMode 
     ? 'text-blue-300 border-blue-400 font-medium' 
@@ -102,18 +100,7 @@ function Navbar() {
           <FiUser className="text-xl" />
         </NavLink>
       </div>
-      <button
-  onClick={toggleDrawer}
-  className={`relative ml-4 p-2 rounded-full transition-all duration-300 ${
-    darkMode ? "bg-gray-800 text-blue-300 hover:bg-gray-700" : "bg-gray-100 text-blue-600 hover:bg-blue-200"
-  }`}
-  aria-label="Show notifications"
->
-  <FiBell size={20} />
-  {notifications.length > 0 && (
-    <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-  )}
-</button>
+    
 
       {/* Dark Mode Toggle - unchanged */}
       <button

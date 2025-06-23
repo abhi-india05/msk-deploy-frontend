@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { FiTrash2, FiX } from "react-icons/fi";
 import { useParams } from "react-router-dom";
 import { API_BASE_URL } from "../config";
-import { useNotification } from "../contexts/NotificationContext";
 export default function NotificationDrawer() {
   const {
     notifications,
