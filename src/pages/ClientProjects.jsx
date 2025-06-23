@@ -27,7 +27,7 @@ function ClientProjects() {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/${user_id}/${client_id}/projects`,
+          `${API_BASE_URL}/${user_id}/${client_id}/projects`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ function ClientProjects() {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/${user_id}/${client_id}/addproject`, {
+      const response = await fetch(`${API_BASE_URL}/${user_id}/${client_id}/addproject`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function ClientProjects() {
   const handleDeleteProject = async (projectId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/${user_id}/${projectId}/deleteproject`,
+        `${API_BASE_URL}/${user_id}/${projectId}/deleteproject`,
         {
           method: "DELETE",
           headers: {

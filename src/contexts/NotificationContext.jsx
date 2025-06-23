@@ -20,7 +20,7 @@ export function NotificationProvider({ children }) {
 
     const fetchNotifications = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/${user_id}/notifications`, {
+        const res = await fetch(`${API_BASE_URL}/${user_id}/notifications`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

@@ -19,7 +19,7 @@ export default function NotificationDrawer() {
   // Fetch notifications from backend when drawer opens
   useEffect(() => {
     if (drawerOpen && user_id && token) {
-      fetch(`http://localhost:3000/${user_id}/notifications`, {
+      fetch(`${API_BASE_URL}/${user_id}/notifications`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then((res) => res.json())

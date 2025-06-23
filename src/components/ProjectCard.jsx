@@ -69,7 +69,7 @@ function ProjectCard({
 
     try {
       const response = await fetch(
-        `http://localhost:3000/${project.user_id}/${project.client_id}/${project.project_id}/addinvoice`,
+        `${API_BASE_URL}/${project.user_id}/${project.client_id}/${project.project_id}/addinvoice`,
         {
           method: 'POST',
           headers: {

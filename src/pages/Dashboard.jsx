@@ -67,7 +67,7 @@ const [addingTask, setAddingTask] = useState(false);
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/${user_id}/dashboard`, {
+        const response = await fetch(`${API_BASE_URL}/${user_id}/dashboard`, {
           headers: {
              'Content-Type': 'application/json',
              Authorization: `Bearer ${token}`,
@@ -109,7 +109,7 @@ const [addingTask, setAddingTask] = useState(false);
 useEffect(() => {
   if (selectedClient) {
     setLoadingProjects(true);
-    fetch(`http://localhost:3000/${user_id}/${selectedClient}/projectdropdown`, {
+    fetch(`${API_BASE_URL}/${user_id}/${selectedClient}/projectdropdown`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -136,7 +136,7 @@ useEffect(() => {
 
   useEffect(() => {
   if (showTaskModal) {
-    fetch(`http://localhost:3000/${user_id}/clients`, {
+    fetch(`${API_BASE_URL}/${user_id}/clients`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -171,7 +171,7 @@ useEffect(() => {
     console.log('token:', token);
     try {
       // Update task priority in backend
-      const response = await fetch(`http://localhost:3000/${user_id}/${taskId}/priority`, {
+      const response = await fetch(`${API_BASE_URL}/${user_id}/${taskId}/priority`, {
         method: 'PATCH',
         headers: {
            'Content-Type': 'application/json',
@@ -219,7 +219,7 @@ useEffect(() => {
   const handleReviewDrop = async (taskId, fromBoardId) => {
     try {
       // First update status to completed (true)
-      const statusResponse = await fetch(`http://localhost:3000/${user_id}/${taskId}/status`, {
+      const statusResponse = await fetch(`${API_BASE_URL}/${user_id}/${taskId}/status`, {
         method: 'PATCH',
         headers: {
            'Content-Type': 'application/json',
@@ -305,7 +305,7 @@ useEffect(() => {
 
     try {
       // Update task price in backend
-      const response = await fetch(`http://localhost:3000/${user_id}/${currentTask._id}/price`, {
+      const response = await fetch(`${API_BASE_URL}/${user_id}/${currentTask._id}/price`, {
         method: 'PATCH',
         headers: {
          'Content-Type': 'application/json',
@@ -590,7 +590,7 @@ useEffect(() => {
           };
           console.log(selectedProject);
           console.log(selectedClient);
-          const response = await fetch(`http://localhost:3000/${user_id}/${selectedClient}/addtask`, {
+          const response = await fetch(`${API_BASE_URL}/${user_id}/${selectedClient}/addtask`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

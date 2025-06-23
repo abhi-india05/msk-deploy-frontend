@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Cell, Pie, PieChart } from "recharts";
 import Navbar from "../components/Navbar";
 import { useTheme } from "../contexts/ThemeContext";
-import { PieChart, Pie, Cell } from "recharts";
-import { useParams } from "react-router-dom";
 
 // Chart configs
 const CHARTS = [
@@ -121,7 +121,7 @@ function UserStats() {
         arr[idx] = true;
         return arr;
       });
-      fetch(`http://localhost:3000/stats/projects-${chart.endpoint}/${user_id}`, {
+      fetch(`${API_BASE_URL}/stats/projects-${chart.endpoint}/${user_id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())

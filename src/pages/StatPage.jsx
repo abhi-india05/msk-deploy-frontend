@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
+  Area,
+  AreaChart,
+  CartesianGrid,
   Cell,
   Pie,
   PieChart,
-  AreaChart,
-  Area,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid,
 } from "recharts";
 import Navbar from "../components/Navbar";
 import { useTheme } from "../contexts/ThemeContext";
@@ -186,7 +186,7 @@ function StatPage() {
         return arr;
       });
       fetch(
-        `http://localhost:3000/stats/projects-${chart.endpoint}/${user_id}`,
+        `${API_BASE_URL}/stats/projects-${chart.endpoint}/${user_id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -217,7 +217,7 @@ function StatPage() {
   // Fetch heatmap data
   useEffect(() => {
     setHeatmapLoading(true);
-    fetch(`http://localhost:3000/${user_id}/statistics`, {
+    fetch(`${API_BASE_URL}/${user_id}/statistics`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -231,7 +231,7 @@ function StatPage() {
   // Fetch area chart data (weekly deadlines)
   useEffect(() => {
     setWeeklyDeadlineLoading(true);
-    fetch(`http://localhost:3000/stats/weekly-deadlines/${user_id}`, {
+    fetch(`${API_BASE_URL}/stats/weekly-deadlines/${user_id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

@@ -15,7 +15,7 @@ function InvoicePage() {
 const navigate = useNavigate();
   useEffect(() => {
     console.log("Fetching invoice data for:", { user_id, client_id, project_id });
-    fetch(`http://localhost:3000/${user_id}/${client_id}/${project_id}/viewinvoice`, {
+    fetch(`${API_BASE_URL}/${user_id}/${client_id}/${project_id}/viewinvoice`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -43,7 +43,7 @@ const navigate = useNavigate();
   setIsSending(true);
   try {
     const response = await fetch(
-      `http://localhost:3000/${user_id}/${invoiceData._id}/email`,
+      `${API_BASE_URL}/${user_id}/${invoiceData._id}/email`,
       {
         method: "POST",
         headers: {

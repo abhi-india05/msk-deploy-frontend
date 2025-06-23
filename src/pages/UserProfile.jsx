@@ -273,7 +273,7 @@ const UserProfile = () => {
   const [joined, setJoined] = useState("");
   const navigate=useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:3000/user/${user_id}`, {
+    fetch(`${API_BASE_URL}/user/${user_id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -308,7 +308,7 @@ const UserProfile = () => {
     e.preventDefault();
     setEditMode(false);
 
-    fetch(`http://localhost:3000/user/${user_id}`, {
+    fetch(`${API_BASE_URL}/user/${user_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

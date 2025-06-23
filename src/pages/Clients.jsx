@@ -352,7 +352,7 @@ function Clients() {
 
   const fetchClients = () => {
     setLoading(true);
-    fetch(`http://localhost:3000/${user_id}/clients`, {
+    fetch(`${API_BASE_URL}/${user_id}/clients`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -388,7 +388,7 @@ function Clients() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/${user_id}/addclient`,
+        `${API_BASE_URL}/${user_id}/addclient`,
         {
           method: "POST",
           headers: {
@@ -422,7 +422,7 @@ function Clients() {
   const handleDelete = async (client_id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/${user_id}/${client_id}/deleteclient`,
+        `${API_BASE_URL}/${user_id}/${client_id}/deleteclient`,
         {
           method: "DELETE",
           headers: {
