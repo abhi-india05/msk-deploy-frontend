@@ -7,18 +7,26 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
 .vite/
-public/
-dist
-dist-ssr
+build/
+
+# Local env files
+.env
 *.local
-eslint.config.js
-vite.config.js
+
+# Optional: ignore public if you generate it dynamically (usually you SHOULD keep /public)
+# public/
+
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -26,4 +34,3 @@ vite.config.js
 *.sln
 *.sw?
 
-node_modules/
