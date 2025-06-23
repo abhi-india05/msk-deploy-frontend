@@ -245,8 +245,7 @@ const UserProfile = () => {
 }
   export default UserProfile;*/}
 
-
-  import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiCamera, FiEdit2, FiLock, FiMail, FiSave } from "react-icons/fi";
 import { useNavigate, useParams } from "react-router-dom";
@@ -255,6 +254,7 @@ import user_img from '../assets/user_img.jpg';
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 import { useTheme } from "../contexts/ThemeContext";
 const UserProfile = () => {
   const { user_id } = useParams();

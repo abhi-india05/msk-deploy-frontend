@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { FiBriefcase, FiCalendar, FiEye, FiFileText, FiTrash2, FiUser } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { API_BASE_URL } from "../config";
 import { useTheme } from '../contexts/ThemeContext';
-
 function ProjectCard({ 
   project = {
     projectName: '',

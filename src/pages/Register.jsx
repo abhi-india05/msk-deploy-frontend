@@ -4,6 +4,7 @@ import { FiMoon, FiSun } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import '../App.css';
+import { API_BASE_URL } from "../config";
 import { useTheme } from '../contexts/ThemeContext';
 
 function Register() {

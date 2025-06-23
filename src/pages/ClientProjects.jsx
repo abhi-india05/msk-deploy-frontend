@@ -6,8 +6,8 @@ import { toast } from "react-toastify";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
+import { API_BASE_URL } from "../config";
 import { useTheme } from "../contexts/ThemeContext";
-
 function ClientProjects() {
   const { darkMode } = useTheme();
   const [projects, setProjects] = useState([]);

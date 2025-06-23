@@ -1,6 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
-import { FiMoon, FiSun } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from 'react-share';

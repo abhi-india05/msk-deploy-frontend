@@ -325,7 +325,6 @@ function Clients() {
 }
 
 export default Clients;*/}
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiPlus, FiSearch } from "react-icons/fi";
@@ -335,6 +334,7 @@ import ClientCard from "../components/ClientCard";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 import { useTheme } from "../contexts/ThemeContext";
 
 function Clients() {

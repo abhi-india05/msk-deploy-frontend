@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Navbar from '../components/Navbar';
+import { API_BASE_URL } from "../config";
 import { useTheme } from '../contexts/ThemeContext';
 
 const Dashboard = () => {

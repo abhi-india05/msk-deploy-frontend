@@ -15,7 +15,9 @@ import {
   YAxis,
 } from "recharts";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 import { useTheme } from "../contexts/ThemeContext";
+
 
 // Chart configs
 const CHARTS = [

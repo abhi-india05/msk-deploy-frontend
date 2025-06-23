@@ -5,7 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { API_BASE_URL } from "../config";
 import { useTheme } from "../contexts/ThemeContext";
+
 function InvoicePage() {
   const { darkMode } = useTheme();
   const [invoiceData, setInvoiceData] = useState(null);
